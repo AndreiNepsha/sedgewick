@@ -30,7 +30,9 @@ std::vector<std::pair<int, int>> expected = {
     std::pair<int, int>(6, 1)
 };
 
-BOOST_AUTO_TEST_CASE(alg1_test) {
-    const static auto actual = alg_1(&input);
-    BOOST_CHECK(*actual == expected);
+BOOST_AUTO_TEST_CASE(algs_test) {
+    BOOST_CHECK(*fast_search(&input) == expected);
+    BOOST_CHECK(*fast_merge(&input) == expected);
+    BOOST_CHECK(*weighed_fast_merge(&input) == expected);
+    BOOST_CHECK(*weighed_fast_merge_with_path_compresion(&input) == expected);
 }
